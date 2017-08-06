@@ -1,0 +1,347 @@
+
+	#pagewrapper {
+		font: 14px/1.4;
+		width: 1600px;
+		background-color: #FFF;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	#header {
+		background-color: gray;
+		height: 227px;
+		width: 1600px;
+	}
+	#logo{
+		
+		height: 227px;
+		width: 1000px;
+	
+	}
+	#imagelogo{
+	position: relative;
+	left: 650px;
+	top:-300px;
+	}
+	
+	#titlelogo{
+	position: relative;
+	left: 50px;
+	
+	}
+	
+	#titlelog{
+	height: 227px;
+		width: 227px;
+	}
+	
+	h1{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 35px;
+	color: white;
+	position: relative;
+	left: 150px;
+	top:-100px;
+	}
+	
+	
+	#leftSidebar {
+		float: left;
+	}
+	
+	#contentWrapper {
+		background-color:#BDBDBD;
+		float: left;
+		width: 1600px;
+	}
+	.middleColumn1{
+	width: 300px;
+	height: 900px;
+		margin-right: 10px;
+		margin-left: 10px;
+		float: left;
+	}
+	.middleColumn {
+		width: 1000px;
+		margin-right: 10px;
+		margin-left: 10px;
+		float: left;
+	}
+	
+	.middleCon {
+		background-color: #FFF;
+		border: 3px solid #000;
+		margin: 10px;
+		width: 980px;
+		height: 300px;
+		padding: 10px;
+	}
+	.middleContainer {
+		background-color: #FFF;
+		border: 3px solid #000;
+		margin:15px 20px 15px 20px;
+		width: 264px;
+		height: 250px;
+		padding: 10px;
+	}
+	
+	.container #listbox{
+	float : right;}
+	
+	.content
+{
+	height:50px;
+	width:250px;
+	border:1px solid;
+	background-color:#E8E8E8;
+	text-align: center;
+}
+
+.leftContainer{
+width: 250px;
+height:500px;
+
+}
+
+#ad{
+position: relative;
+bottom: -15px;
+}
+
+#listbox a{
+text-decoration: none;
+}
+
+.middleTitle {
+		font: 14px/1.4 'PT Sans Narrow', sans-serif;
+		background-color: #471F37;
+		color: #FFF;
+		width: 188px;
+		height: 26px;
+		margin-top: 5px;
+		text-align: right;
+		padding-right: 7px;
+		position: relative;
+		left: 72px;
+		top: -20px;
+		z-index: 20;
+	}
+	
+	.featuredImage {
+		position: relative;
+		left: 1px;
+		top: -45px;
+	}
+	
+	.middleArtTitle {
+	text-align: center;
+		position: relative;
+		top: -45px;
+		padding-left: 4px;
+	}	
+	
+	
+	.prodMoreInfoBut {
+		background-color: #535353;
+		height: 28px;
+		width: 100px;
+		margin-top:15px;
+		margin-left: 10px;
+		padding-top:4px;
+		padding-left: 4px;
+		position: relative;
+		top: -40px;
+		
+	}
+	
+	.prodMoreInfoBut a{
+		text-decoration: none;
+		color: #fff;
+	}
+	
+	.prodMoreInfoBut:hover {
+		background-color: #666;
+	}
+	
+	.prodAddToCartBut {
+		background-color: #3c89b5;
+		height: 28px;
+		width: 120px;
+		padding-top: 4px;
+		padding-left: 4px;
+		position: relative;
+		top: -72px;
+		left: 120px;
+	}
+	
+	.prodAddToCartBut a{
+		text-decoration: none;
+		color: #fff;
+	}
+	
+	.prodAddToCartBut:hover {
+		background-color: #666;
+	}
+	.horzMidRule {
+		background-color: #471f37;
+		height: 2px;
+		width: 256px;
+		margin-left: 3px;
+		position: relative;
+		top: -45px;
+	}
+	
+		#rightSidebar {
+		float: left;
+		margin-left: 12px;
+		margin-right: 0px;
+	}
+	
+	.rightContainer {
+		background-color: #FFF;
+		border: 3px solid #000;
+		margin: 10px;
+		margin-right: 0px;
+		width: 270px;
+		height: 269px;
+		padding: 2px;
+	}
+	
+	
+	#eForm {
+		position: relative;
+		top: -30px;
+		left: 2px;
+	}
+	.einfo {
+		position: relative;
+		left: 2px;
+		top: -30px;
+		color: #244f4f;
+		font-size: 10pt;
+	}
+	.socialIcons {
+		width: 270px;
+		margin-left: 30px;
+		padding: 5px;
+		font-size: 25px;
+	}
+	
+	
+	#footer {
+		background: #471F37;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5f2c4b', endColorstr='#471F37'); /* for IE */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#5f2c4b), to(#471F37)); /* for webkit browsers */
+		background-image: -moz-linear-gradient(top,  #5f2c4b,  #471F37); /* for firefox 3.6+ */ 
+		float: left;
+		width: 1500px;
+		height: 100px;
+		text-align: center;
+		color: #fff;
+		
+	}
+	
+	#footer a{
+	text-decoration: none;
+	color:white;
+	}
+	
+div#menu{
+
+position: relative;
+z-index: 200;
+}
+
+table.navbar
+{font: bold 16px/.5 , sans-serif;
+text-shadow: #000000 1px 1px 1px;
+margin: 0px;
+padding: 0px; 
+}
+
+table.menu
+{font-size: 10pt;
+margin: 0px;
+padding: 0px;
+}
+
+td.menuNormal
+{padding: 0px 0px 0px 5px;
+width: 200px;
+color: #B40486;
+vertical-align: top; /* Sets the vertical alignment to the top of the div */
+background: gray;
+
+border-top:1px solid black;
+border-bottom: 1px solid black;
+}
+
+td.menuHover
+{padding: 0px 0px 0px 5px;
+width: 160px;
+color: gray;
+vertical-align: top;
+/*remove the following lines for drop-down menu with images*/
+background: black;
+
+border-top:1px solid black;
+border-bottom: 1px solid black;
+}
+
+div.menuNormal
+{display: none; /* States that this div should not display */
+font: 12px/1.5 tahoma, sans-serif;
+position: static; /* Tells the element to just flow with everything else */
+}
+
+div.menuHover
+{
+font: 14px/1.5 tahoma, sans-serif;
+background: gray;
+display: inline; /* Tells the div to generate an inline box with no line break*/
+position: absolute; /* Positions the element relative to the parent */
+left:100px;
+}
+
+a.menuitem:link
+{text-decoration: none;
+color: gray;
+padding: 2.5px;
+background:black ;
+
+text-shadow: #000000 1px 1px 1px;
+display: block;
+} /* Display a line break before and after the box */
+
+a.menuitem:visited
+{text-decoration: none;
+color: gray;
+padding: 2.5px;
+background:black ;
+
+border-top:1px solid black;
+border-bottom: 1px solid black;
+display: block;} /* Display a line break before and after the box */
+
+a.menuitem:hover
+{text-decoration: none;
+color: #B40486;
+padding: 2.5px;
+background: gray;
+border-top:1px solid black;
+border-bottom: 1px solid black;
+display: block;} /* Display a line break before and after the box */
+
+a.menuitem:active
+{text-decoration: none;
+color: gray;
+padding: 2.5px;
+background:black;
+border-top:1px solid black;
+border-bottom: 1px solid black;
+display: block;} /* Display a line break before and after the box */
+
+
+//for display of info
+.moreinfo{visibility:hidden;}

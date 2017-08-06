@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.mybutton{
+margin-left:20px;
+float:right;
+}
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel="StyleSheet" href="./css/music.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="./js/menu.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+
+
+ function ajaxFunction(instrumentname)   //functionName could be anything
+{
+	//1. Create XmlHttpRequest Object
+	//This could be written into an external .js file that could be used within other pages as well.
+	var xmlHttp;
+	
+   
+	try     // Firefox, Opera 8.0+, Safari
+	{
+		xmlHttp=new XMLHttpRequest();
+	}
+	catch (e)
+	{
+		try  // Internet Explorer
+		{
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e)
+			{
+				alert("Your browser does not support AJAX!");
+				return false;
+			}
+		}
+	}
+
+	//2. Call the server-side script
+	//instrumentname is the function parameter passed when the JS function is called
+	
+	xmlHttp.open("GET", "cities.jsp?q=" + instrumentname, true);   //q is the name of the parameter to be used in JSP
+	xmlHttp.send();   //leave blank, or pass null. Not used with GET requests
+
+	
+	//3. Check the server-data is ready
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4)
+		{
+			//4. Manipulate the DOM
+			var instrudiv = document.getElementById("textfor");
+			var serverData = xmlHttp.responseText;
+		
+			if(instrumentname == "")
+	        {
+	           instrudiv.innerHTML = "";
+	        }
+			else
+			{
+			   instrudiv.innerHTML = serverData;
+			   
+			}
+			
+			
+		}
+	}
+
+}
+</script>
+ 
+ 
+ 
+
+</head>
+<body>
+<div class="container-fluid">
+
+      <div class="page-header">
+        <div class="row">
+<div class="col-md-4 ">
+<div id="titlelogo">
+		<img src="./images/21.png" alt="Music Note Logo" id="titlelog" height=" 227px" width="227px" />
+</div><!-- End of titlelogo -->
+</div>
+<div class="col-md-2 ">
+		<h1><em> MUSIC</em></h1>
+</div><!-- End of col -->
+<div class="col-md-6 ">
+<div id="imagelogo">
+<img src="./images/note1.png" alt="Music Note Logo" height=" 227px" width="900px" />
+</div>
+</div>
+</div><!-- end of header-->
+		       
+                 
+                 
+
+ </div>
+
+
+<div class="row">
+<div class= "col-md-3 menu ">
+
+	<table class="navbar" width="355" >
+		<tr>
+		<td class="menuNormal"> <p id="home"><a href="project.html">HOME</a></p></td>
+		</tr>
+    	<tr>
+    	
+      	<td class="menuNormal" onmouseover="expand(this);" 
+      	onmouseout="collapse(this);">
+        
+        
+        <p>GUITARS</p>
+        
+        
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Electric Guitars</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Guitar Amps</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Guitar Effects</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Acoustic Electric Guitars</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Acoustic Guitars</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+	  </tr>
+	  <tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>KEYBOARD</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Synthesizers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Workstations</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Arrangers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Production/Groove</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+	  <tr>
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>DJ</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Control Surfaces</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Audio Interfaces</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Software</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ CD Systems</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+	  <tr>
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>DRUM</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Sets</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Electronic Drums</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Machines</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Hardware</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+		</div>
+		</td>
+		</tr>
+		<tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>ACCESSORIES</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Audio Cables</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Headphones</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Music Stands</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+			
+			
+          </table>
+        </div>
+      </td>
+      	  </tr>
+		  <tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>LIVE SOUND</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">PA Speakers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">In Ear Monitor System</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Power Amplifiers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Wireless Systems</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+		</table>
+
+</div><!-- menu-->
+<div class="col-md-8 bar ">
+<br><input class="form-control" type="text" placeholder="enter the instrument name" onkeyup = "ajaxFunction(this.value)">
+  <br><br>
+  
+  <div id = "textfor"></div>
+
+ </div>
+ 
+ <div class="col-md-1">
+ 
+ </div>
+ </div><!-- row-->
+
+ <div id="footer" class="footer">
+		
+				&copy; 2015 MUSIC - All rights reserved. Please read our
+				<a href="">Terms of Use</a>,
+				<a href="">Privacy Policy</a>,
+				and <a href="">Phone Recording Policy</a>.
+				<span >
+					<a href="/about/links.php">Links</a>
+					| <a href="/about/press-releases/">Press Releases</a>
+				</span>
+				<a href=""><!-- Nothing to see here --></a>
+			
+			</div>
+ </div><!-- fluid-->
+ </body>
+ 
+ </html>

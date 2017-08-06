@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" >
+
+<link rel="StyleSheet" href="./css/music.css" />
+
+<script type="text/javascript" src="./js/menu.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body >
+
+ <div class="container-fluid">
+
+      <div class="page-header">
+        <div class="row">
+<div class="col-md-4 ">
+<div id="titlelogo">
+		<img src="./images/21.png" alt="Music Note Logo" id="titlelog" height=" 227px" width="227px" />
+</div><!-- End of titlelogo -->
+</div>
+<div class="col-md-2 ">
+		<h1><em> MUSIC</em></h1>
+</div><!-- End of col -->
+<div class="col-md-6 ">
+<div id="imagelogo">
+<img src="./images/note1.png" alt="Music Note Logo" height=" 227px" width="900px" />
+</div>
+</div>
+</div><!-- end of header-->
+		       
+                 
+                 
+
+      </div>
+
+
+ 
+ <div class="container">
+	 <div id="logindetails" class="modal fade" role="dialog"><!-- login-->
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Sign in Details</h2>
+              </div>
+              <div class="modal-body">
+                <p id = "headerror"></p><br><br>
+                <input class = "username" type="text" placeholder="Username"> &nbsp; <p id = "error"></p><br><br>
+                <input class = "pswd" type="password" placeholder="Password"> &nbsp; <p id = "pswd1"></p>
+                
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="btn btn-default"  id = "confirm1" onclick="passwordcheck()">Login</button>
+                 <button type="button" class="btn btn-default cl" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+
+
+
+        <div id="loggingout" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+		  
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Logout</h4>
+              </div>
+              <div class="modal-body">
+                <h2>You Are Now Logged Out. Do Visit Again.</h2>
+              </div>
+              <div class="modal-footer">
+                 
+                 <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+	 
+	  <div id="trylogout" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Please Sign In</h3>
+              </div>
+             
+              <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+	 
+	 <div id="confirmation" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content logout-->
+            <div class="modal-content">
+			
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">ARE YOU SURE ?</h2>
+              </div>
+             
+              <div class="modal-footer">
+                 <button type="button" class="btn btn-default logoutconfirm">Yes</button>
+				 
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+	 
+	 <div id="alreadylogin" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content for login press when already logged in-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+				
+                <h2 class="modal-title">You Are Already Signed In.</h2>
+              </div>
+              
+              <div class="modal-footer">
+                 
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+	 
+	 
+	 <div id="addtocartdiv" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content for login press when already logged in-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+				
+                <h2 class="modal-title">Do you want to add this to the Cart?</h2>
+              </div>
+              
+              <div class="modal-footer">
+                 <button type="button" class="btn btn-default sure">Yes</button>
+				 
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+	
+	
+	
+	<div id="added" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content for login press when already logged in-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+				
+                <h2 class="modal-title">Item Successfully Added To The Cart</h2>
+              </div>
+              
+              <div class="modal-footer">
+         			 
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+
+          </div>
+     </div>
+
+
+   
+
+
+    
+
+
+
+	 <h2><marquee>The Music Webiste</marquee></h2>
+	 <div class="row">
+	 <div class= "col-md-8 logins ">
+                  
+				   <br><a href = "music2.html"><button type="button" class="btn btn-primary search" >Search the Instrument</button></a><br><br>
+	
+       </div> 
+	   
+	   <div class= "col-md-4 logins">
+                  
+				  <button type="button" class="btn btn-primary logout" >Logout</button>
+				  <button type="button" class="btn btn-info login">Sign In</button>
+	
+       </div> 
+	   </div>
+	 
+	 
+	 
+<div class="row ">
+
+ <div class="col-md-12">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+                                                                                        <ol class="carousel-indicators">
+                                                                                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                                                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                                                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                                                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                                                                                        </ol>
+
+                                                                                        <!-- Wrapper for slides -->
+                                                                                        <div class="carousel-inner" role="listbox">
+                                                                                          <div class="item active">
+                                                                                            <img src="./images/img1.jpg" alt="books1" width="1100" >
+                                                                                          </div>
+
+                                                                                          <div class="item">
+                                                                                            <img src="./images/img2.jpg" alt="books2" width="1100">
+                                                                                          </div>
+
+                                                                                          <div class="item">
+                                                                                            <img src="./images/img3.jpg" alt="book3" width="1100">
+                                                                                          </div>
+
+                                                                                          <div class="item">
+                                                                                            <img src="./images/img4.jpg" alt="books4" width="1100">
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                                                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                                          <span class="sr-only">Previous</span>
+                                                                                        </a>
+                                                                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                                                                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                                          <span class="sr-only">Next</span>
+                                                                                        </a>
+ </div>
+ 
+ 
+</div><!-- midcol-->
+
+
+
+
+</div><!-- end of row-->
+
+
+<div class="row">
+<div class= "col-md-4 menu">
+
+	<table class="navbar" width="355" >
+		<tr>
+		<td class="menuNormal"> <p id="home"><a href="project.html">HOME</a></p></td>
+		</tr>
+    	<tr>
+    	
+      	<td class="menuNormal" onmouseover="expand(this);" 
+      	onmouseout="collapse(this);">
+        
+        
+        <p>GUITARS</p>
+        
+        
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Electric Guitars</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Guitar Amps</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Guitar Effects</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Acoustic Electric Guitars</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Acoustic Guitars</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+	  </tr>
+	  <tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>KEYBOARD</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Synthesizers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Workstations</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Arrangers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Production/Groove</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+	  <tr>
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>DJ</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Control Surfaces</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Audio Interfaces</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ Software</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">DJ CD Systems</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+	  <tr>
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>DRUM</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Sets</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Electronic Drums</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Machines</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Drum Hardware</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+		</div>
+		</td>
+		</tr>
+		<tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>ACCESSORIES</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Audio Cables</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Headphones</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Music Stands</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+			
+			
+          </table>
+        </div>
+      </td>
+      	  </tr>
+		  <tr>
+      
+      <td class="menuNormal"  onmouseover="expand(this);" 
+      onmouseout="collapse(this);">
+        <p>LIVE SOUND</p>
+        <div class="menuNormal" >
+          <table class="menu" >
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">PA Speakers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">In Ear Monitor System</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Power Amplifiers</a>
+            </td></tr>
+            <tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">Wireless Systems</a>
+            </td></tr>
+			<tr><td class="menuNormal">
+              <a href="music3.html" class="menuitem">View All</a>
+            </td></tr>
+          </table>
+        </div>
+      </td>
+      	  </tr>
+		</table>
+		
+		
+		<div class="rightContainer">
+		
+		<div class="middleTitle"><h4>CONTACT</h4></div>
+			
+					
+			<p class="einfo">Contact us</p>
+			</br>
+			<div class="horzMidRule"></div>
+			<p class="einfo">Toll-free: (001)000-0000</p>
+			</br>
+			<div class="horzMidRule"></div>
+			<p class="einfo"><b>Email Us</b></p>
+			<br>
+			<div class="horzMidRule"></div>
+			<p class="einfo">abcmusic@abcmusic.com</p>
+		
+		</div> <!-- End of rightContainer -->
+		
+		
+		<div class="socialIcons">
+			<a href="https://www.facebook.com" target="_blank"><img src="images/fb.png" alt="facebook"  width="40px" height="40px"/>Facebook</a> 
+			</div> <!-- End of socialIcons -->
+			<div class="socialIcons">
+			<a href="https://www.twitter.com" target="_blank"><img src="images/twt.png" alt="twitter"  width="40px" height="40px"/>Twitter</a>
+			</div> <!-- End of socialIcons -->
+			<div class="socialIcons">
+			<a href="https://www.youtube.com" target="_blank"><img src="images/youtube.png" alt="youtube" width="40px" height="40px"/>Youtube</a>
+			</div> <!-- End of socialIcons -->
+			<div class="socialIcons">
+			<a href="https://www.instagram.com" target="_blank"><img src="images/insta.png" alt="instagram"  width="40px" height="40px"/>Instagram</a>
+			</div> <!-- End of socialIcons -->
+			<div class="socialIcons">
+			<a href="https://www.futurity.com" target="_blank"><img src="images/fut.png" alt="futurity"  width="40px" height="40px"/>Futurity</a>
+		</div> <!-- End of socialIcons -->
+	
+</div> <!-- End of menu -->
+<div class="col-md-4 ">
+<div class="middleContainer">
+			
+				<div class="middleTitle"><h4>New Arrival</h4></div>
+				
+				<img src="./images/aa.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Native Instruments Traktor Kontrol S5</b></br>$799.00 + FREE Shipping</div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a href="#" class="more1">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo1"> <h2>Features</h2>Native Instruments has announced the newest controller in their 
+				all-in-one DJ lineup: the Traktor Kontrol S5. This all-in-one DJ interface eliminates the jogs wheels from 
+				the Kontrol S4’s layout and adds in with the future looking screens of the S8. More compact and affordable 
+				than the S8, it will give DJs the screens they want at a more realistic price. Get all the details on the 
+				new Kontrol S5 inside.</div>
+				
+				
+			</div> <!-- End of middlecontainer2 -->
+			<div class="middleContainer">
+			
+				<div class="middleTitle"><h4>New Arrival</h4></div>
+				
+				<img src="./images/bb.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Shure BLX24/PG58 Handheld Wireless System - Band H10, 542-572MHz</b></div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a href="#" class="more2">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo2"> <h2>Features</h2>The Shure BLX24/PG58 Handheld Wireless System gives you world-class
+				design and rock-solid build quality, along with easy setup and operation. Thanks to Shure's cutting-edge 
+				QuickScan technology, frequency selection hassles are a thing of the past. The system includes the BLX4 
+				receiver and the BLX2/PG58 handheld transmitter with integrated PG58 cardioid dynamic microphone capsule.
+				If you're ready to perform untethered, Shure's BLX wireless systems are a smart, affordable choice.</div>
+				
+				
+			</div> <!-- End of middlecontainer3 -->
+			<div class="middleContainer">
+			
+				<div class="middleTitle"><h4>New Arrival</h4></div>
+				
+				<img src="./images/cc.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Keith McMillen Instruments K-Board</b></br>$79.00+ FREE Shipping</div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a href="#" class="more3">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo3"> <h2>Features</h2>LED backlit, touch sensitive keys</br>
+Ultra-durable and spill proof</br>
+Mac, Windows, iOS, Android</br>
+Plug & play with any music software</div>
+				
+			</div> <!-- End of middlecontainer3 -->
+
+</div>
+<div class="col-md-4 ">
+<div class="middleContainer" >
+			
+				<div class="middleTitle"><h4>Top Deals</h4></div>
+				
+				<img src="./images/dd.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Akai Professional APC Key 25</b></br>$75.00 + FREE Shipping</div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a  href="#" class="more4">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo4"> <h2>Features</h2>Ableton Live controller with built-in performance keyboard
+				Seamlessly integrates 1 to 1 with Ableton Live
+				Clip-launch matrix with tri-color lighting displays current clip status
+				25 synth-action mini keys
+				8 assignable knobs map to Ableton Live and control volume, sends, and more
+				Shift button and directional arrows manipulate the scope of the grid
+				Dedicated Octave Up, Octave Down, and Sustain buttons
+				USB-powered and plug-and-play setup for Mac and PC
+				Production package included: Ableton Live Lite, Hybrid 3 by AIR Music Tech, SONiVOX Twist, and Toolroom artist launch packs</div>
+				
+				
+			</div> <!-- End of middlecontainer2 -->
+			<div class="middleContainer second">
+			
+				<div class="middleTitle"><h4>Top Deals</h4></div>
+				
+				<img src="./images/ee.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Pearl Masters MCX Snare - 5.5" x 14" Piano Black</b></br>$199.00 + FREE Shipping</div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a href="#" class="more5">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo5"> <h2>Features</h2>he Pearl Masters MCX1455S snare drum gives you the same 6-ply maple shell
+				and quality hardware found on Pearl's high-end Masters series (the drums of choice for heavies such as Virgil Donati). 
+				MCX snares sport MasterCast die-cast hoops, which optimize the depth, clarity, and focus of your sound. When tuned high, 
+				this snare delivers a tight, precise punch that'll cut through the densest of mixes. Tune it lower and infuse an impactful, 
+				husky bark without losing definition.
+				It even has great cross-stick sound. Power your backbeat with legendary Masters sound and quality: the Pearl MCX1455S.</div>
+				
+			</div> <!-- End of middlecontainer3 -->
+			<div class="middleContainer second">
+			
+				<div class="middleTitle"><h4>Top Deals</h4></div>
+				
+				<img src="./images/ff.jpg" alt="Featured Image" width="350px" height="200px" class="featuredImage" />
+				
+				<div class="middleArtTitle"><b>Korg PitchHawk-G2 Compact Clip-on Instrument Tuner</b>$12.99 + FREE Shipping</div>
+				
+				<div class="horzMidRule"></div>
+				
+				<div class="prodMoreInfoBut">
+                <a href="#" class="more6">FEATURES</a>
+				</div>
+	             
+				<div class="prodAddToCartBut">
+                <a href="#">ADD TO CART</a>
+				</div>
+				<div class = "moreinfo6"> <h2>Features</h2>A clip-on tuner that you can attach directly to the head of your instrument
+Pitch Hawk-G features dedicated guitar and bass modes and also provides flat/capo settings.
+</div>
+				
+			</div> <!-- End of middlecontainer3 -->
+</div>
+
+</div><!-- row-->
+
+
+
+ </div><!-- container-->
+
+ <div id="footer">
+		
+				&copy; 2015 MUSIC - All rights reserved. Please read our
+				<a href="">Terms of Use</a>,
+				<a href="">Privacy Policy</a>,
+				and <a href="">Phone Recording Policy</a>.
+				<span >
+					<a href="/about/links.php">Links</a>
+					| <a href="/about/press-releases/">Press Releases</a>
+				</span>
+				<a href=""><!-- Nothing to see here --></a>
+			</div>
+			
+ </div><!-- fluid-->
+
+<script>
+
+
+// for marquee change when username is entered
+function passwordcheck()
+{
+
+
+	// hardcode the username and password and check
+    if($(".username").val() == "Priyanka" && $(".pswd").val()== "priyanka")
+    {
+              var nm = $(".username").val();
+              (document.getElementsByTagName("marquee")[0]).innerHTML =  " Welcome back " + nm +"!!";
+              $('#logindetails').modal('hide');
+              $(".username").val() = "";
+              $(".pswd").val() = "";
+    }
+    
+    //checks for username and password together
+    if($(".username").val() == "" && $(".pswd").val()== "")
+    {
+              $("#error").html("please enter username");
+              $("#error").css("color", "red");
+              $("#error").css("display","inline");
+             $(".username").val("");
+
+              $("#pswd1").html("please enter password");
+              document.getElementById("pswd1").style.color="red";
+              document.getElementById("pswd1").style.display="inline";
+              (document.getElementsByClassName("pswd")[0]).value="";
+              return;
+    }
+	
+	//if password empty
+    if((document.getElementsByClassName("pswd")[0]).value== "")
+    {
+              document.getElementById("pswd1").innerHTML = "please enter password";
+              document.getElementById("pswd1").style.color="red";
+              document.getElementById("pswd1").style.display="inline";
+              (document.getElementsByClassName("pswd")[0]).value=""; 
+              return;
+    }
+	// if username is blank
+     if((document.getElementsByClassName("username")[0]).value== "")
+    {
+              document.getElementById("error").innerHTML = "please enter username";
+              document.getElementById("error").style.color="red";
+              document.getElementById("error").style.display="inline";
+              (document.getElementsByClassName("pswd")[0]).value=""; 
+              return;
+    }
+	
+	//any other details entered other that specified username and password
+    if(!(((document.getElementsByClassName("username")[0]).value) == "Priyanka" && ((document.getElementsByClassName("pswd")[0]).value) == "priyanka"))
+    {
+              document.getElementById("headerror").innerHTML = "Invalid Credentials";
+              document.getElementById("headerror").style.color="red";
+              document.getElementById("headerror").style.display="inline";
+              (document.getElementsByClassName("pswd")[0]).value=""; 
+              (document.getElementsByClassName("username")[0]).value=""; 
+              return;
+    }
+
+}
+
+
+
+$(".logoutconfirm").click(function(){
+  $("#confirmation").modal("hide");
+ (document.getElementsByTagName("marquee")[0]).innerHTML ="The Music Webiste- abc";
+  $("#loggingout").modal();
+});
+
+$(".prodAddToCartBut").click(function(){
+
+  $("#addtocartdiv").modal();
+});
+$(".sure").click(function(){
+$("#addtocartdiv").modal("hide");
+  $("#added").modal();
+});
+
+
+
+$(".more").mouseenter(function(){
+   
+  $(".moreinfo").css("display","block");
+
+});
+
+$(".more").mouseleave(function(){
+  $(".moreinfo").css("display","none");
+
+});
+
+
+
+
+$(".username").keyup(function(){
+   $("#error").css("display","none");
+   $("#pswd1").css("display","none");
+   $("#headerror").css("display","none");
+});
+
+$(".pswd").keyup(function(){
+   $("#error").css("display","none");
+   $("#pswd1").css("display","none");
+   $("#headerror").css("display","none");
+});
+
+
+
+$(".login").click(function(){
+				   
+					if(!((document.getElementsByTagName("marquee")[0]).innerHTML =="The Music Webiste"))
+					{
+					
+					   $("#alreadylogin").modal();
+					   
+					     return;
+					   
+					}
+					
+					$("#logindetails").modal();
+
+});
+
+$(".logout").click(function(){
+
+     if((document.getElementsByTagName("marquee")[0]).innerHTML =="The Music Webiste")
+     {
+	 
+            $("#trylogout").modal();
+        
+     }
+     else
+     { 
+               $("#confirmation").modal();
+          
+
+     }
+
+});
+
+$(".logoutconfirm").click(function(){
+  $("#confirmation").modal("hide");
+ (document.getElementsByTagName("marquee")[0]).innerHTML ="The Music Webiste- abc";
+  $("#loggingout").modal();
+});
+
+$(".cl").click(function(){
+
+$(".username").val("");
+$(".pswd").val("");
+});
+
+
+
+$(".more1").mouseenter(function(){
+   
+  $(".moreinfo1").css("display","block");
+
+});
+
+$(".more1").mouseleave(function(){
+  $(".moreinfo1").css("display","none");
+
+});
+
+
+
+
+
+$(".more2").mouseenter(function(){
+   
+  $(".moreinfo2").css("display","block");
+
+});
+
+$(".more2").mouseleave(function(){
+  $(".moreinfo2").css("display","none");
+
+});
+
+
+
+
+$(".more3").mouseenter(function(){
+   
+  $(".moreinfo3").css("display","block");
+
+});
+
+$(".more3").mouseleave(function(){
+  $(".moreinfo3").css("display","none");
+
+});
+
+
+
+$(".more4").mouseenter(function(){
+   
+  $(".moreinfo4").css("display","block");
+
+});
+
+$(".more4").mouseleave(function(){
+  $(".moreinfo4").css("display","none");
+
+});
+
+
+
+
+$(".more5").mouseenter(function(){
+   
+  $(".moreinfo5").css("display","block");
+
+});
+
+$(".more5").mouseleave(function(){
+  $(".moreinfo5").css("display","none");
+
+});
+
+
+
+
+$(".more6").mouseenter(function(){
+   
+  $(".moreinfo6").css("display","block");
+
+});
+
+$(".more6").mouseleave(function(){
+  $(".moreinfo6").css("display","none");
+
+});
+
+
+
+
+
+
+
+
+
+</script>
+
+
+ 
+		
+</body>
+
+</html>
